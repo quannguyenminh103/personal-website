@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Light mode */
+:root {
+    --bg: #fdfdfd;
+    --text: #222;
+    --sidebar: #1f1f1f;
+    --sidebar-text: #ddd;
+    --hover: #333;
+}
+
+/* Dark mode */
+body.dark {
+    --bg: #111;
+    --text: #eee;
+    --sidebar: #000;
+    --sidebar-text: #bbb;
+    --hover: #222;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100%;
+    background: var(--sidebar);
+    padding-top: 20px;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.3);
+}
+
+.sidebar h2 {
+    color: white;
+    text-align: center;
+}
+
+.sidebar a {
+    display: block;
+    color: var(--sidebar-text);
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.sidebar a:hover {
+    background: var(--hover);
+    color: white;
+}
+
+/* Content */
+.content {
+    margin-left: 260px;
+    padding: 40px;
+}
+
+section {
+    padding: 40px 0;
+}
+
+/* Home section */
+.home-container {
+    display: flex;
+    gap: 30px;
+}
+
+.avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Fade animation */
+.fade-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Theme toggle */
+#toggle-theme {
+    margin: 20px;
+    width: 180px;
+    padding: 10px;
+    background: #444;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#toggle-theme:hover {
+    background: #666;
+}
